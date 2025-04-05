@@ -2,7 +2,6 @@
 
 import { users } from '@/db'
 import { myFormSchema, type MyFormValues } from './schema'
-import { revalidatePath } from 'next/cache'
 
 export async function updateUserAction(formValues: MyFormValues) {
     const parsedFormValues = myFormSchema.safeParse(formValues)
