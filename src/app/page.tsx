@@ -1,6 +1,6 @@
 import { MyForm, MyFormField, MyFormSubmit } from '@/components/MyForm'
 import { notFound } from 'next/navigation'
-import { users } from './db'
+import { users } from '../db'
 
 async function getUser() {
     await new Promise((resolve) => setTimeout(resolve, 1000))

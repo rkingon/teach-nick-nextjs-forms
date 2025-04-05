@@ -1,6 +1,6 @@
 'use server'
 
-import { users } from '@/app/db'
+import { users } from '@/db'
 import { myFormSchema, type MyFormValues } from './schema'
 import { revalidatePath } from 'next/cache'
 
