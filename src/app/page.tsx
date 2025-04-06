@@ -1,14 +1,14 @@
 import { MyForm, MyFormField, MyFormSubmit } from '@/components/MyForm'
 import { notFound } from 'next/navigation'
-import { users } from '../db'
+import { prisma } from '../db'
 
 async function getUser() {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    const user = users.get(1)
-    if (user) {
-        return user
-    }
-    return null
+    const user = await prisma.user.findUnique({
+        where: {
+            id: 1,
+        },
+    })
+    return user
 }
 
 export default async function Home() {
